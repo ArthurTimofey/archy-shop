@@ -14,7 +14,7 @@ jobs:
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - name: Install dependencies and build
         run: |
-          npm ci
+          npm install 
           VITE_SUPABASE_PROJECT_URL=${{secrets.VITE_SUPABASE_PROJECT_URL}} \
           VITE_SUPABASE_API_KEY=${{secrets.VITE_SUPABASE_API_KEY}} \
           npm run build
