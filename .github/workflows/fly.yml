@@ -12,12 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - name: Install dependencies and build
+      - name: Create .env file
         run: |
-          npm install 
-          VITE_SUPABASE_PROJECT_URL=${{secrets.VITE_SUPABASE_PROJECT_URL}} \
-          VITE_SUPABASE_API_KEY=${{secrets.VITE_SUPABASE_API_KEY}} \
-          npm run build
+          echo "VITE_SUPABASE_PROJECT_URL=${{secrets.VITE_SUPABASE_PROJECT_URL}}" > .env
+          echo "VITE_SUPABASE_API_KEY=${{secrets.VITE_SUPABASE_API_KEY}}" >> .env
       - run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}

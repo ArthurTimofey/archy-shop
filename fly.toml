@@ -7,8 +7,6 @@ primary_region = "lhr"
 
 [env]
   PORT = "8080"
-  VITE_SUPABASE_PROJECT_URL = "${VITE_SUPABASE_PROJECT_URL}"
-  VITE_SUPABASE_API_KEY = "${VITE_SUPABASE_API_KEY}"
 
 [[services]]
   protocol = "tcp"
