@@ -10,6 +10,6 @@
 </script>
 
 <Nav title="{title}" links="{links}" />
-<div class="space-y-4">
+<div class="container mx-auto p-x-4">
 	<slot />
 </div>
